@@ -1,0 +1,259 @@
+@keyframes logo-line-anm {
+  to {
+      stroke-dashoffset: 0;
+  }
+}
+
+.front {
+  &-mainvisual {
+    background-color: $color_red;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+    &-logo {
+      position: absolute; 
+      z-index: 101;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      
+      &-stop1 {
+        stop-color: $color_gradient_stop1;
+      }
+      
+      &-stop2 {
+        stop-color: $color_gradient_stop2;
+      }
+      
+      &-item {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        
+        @include mq(pc) {
+          width: rem(120);
+          height: rem(120);
+        }
+        
+        @include mq(sp) {
+          width: rem(80);
+          height: rem(80);
+        }
+        
+        &.small-font {
+          @include mq(pc) {
+            width: rem(90);
+            height: rem(90);
+          }
+          
+          @include mq(sp) {
+            width: rem(60);
+            height: rem(60);
+          }
+        }
+        
+        &.anm-final {
+          transition: 4s;
+          
+          @include mq(pc) {
+            width: rem(60);
+            height: rem(60);
+            top: rem(80);
+            right: rem(160);
+          }
+          
+          @include mq(sp) {
+            width: rem(40);
+            height: rem(40);
+            top: rem(60);
+            right: rem(80);
+          }
+          
+          &.small-font {
+            @include mq(pc) {
+              width: rem(20);
+              height: rem(20);
+              top: rem(90);
+              right: rem(160);
+            }
+            
+            @include mq(sp) {
+              width: rem(18);
+              height: rem(18);
+              top: rem(70);
+              right: rem(80);
+            }
+          }
+        }
+      }
+      
+      &-fill {
+        opacity: 0; 
+        fill: url(#front-mainvisual-logo-fill-gradient);
+        
+        &.anm-show {
+          opacity: 1;
+          transition: 2s; 
+        }
+        
+        path {
+          stroke: transparent;
+        }
+      }
+      
+      &-line {
+        z-index: 1;
+        opacity: 0;
+        
+        &.anm-show {
+          opacity: 1;
+        }
+        
+        &.anm-hidden {
+          opacity: 0;
+          transition: 2s; 
+        }
+        
+        path {
+          stroke: #f5d7b1;
+        }
+      }
+      
+      &-ryu {
+        transform: translate(-60%, -100%);
+      }
+      
+      &-kai {
+        transform: translate(50%, -100%);
+        
+        &.anm-final {
+          @include mq(pc) {
+            top: rem(70);
+          }
+          
+          @include mq(sp) {
+            top: rem(55);
+          }
+        }
+      }
+      
+      &-kaku {
+        transform: translate(160%, -100%);
+      }
+      
+      &-kata {
+        transform: translate(-120%, 0%);
+      }
+      
+      &-kura {
+        transform: translate(-10%, 0%);
+      }
+      
+      &-chou {
+        transform: translate(110%, 0%);
+      }
+      
+      &-ten {
+        transform: translate(220%, 0%);
+      }
+    }
+    
+    &-sub {
+      position: absolute;
+      width: 200px;
+      height: 100%;
+      top: -30%;
+      left: 50px;
+      
+      &-inner {
+        border: 5px solid #ffd29f;
+        border-radius: 12px;
+        transform: skewY(-30deg);
+        width: 70%;
+        height: 100%;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      }
+      
+      &-imagearea {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        bottom: 0;
+        left: 5px;
+        overflow: hidden;
+      }
+      
+      &-image {
+        background: radial-gradient(ellipse at center, #FFF 150px, transparent 100px);  
+        width: 300px; 
+        height: 200px; 
+        position: absolute;
+        top: 0;
+        left: -100px;
+      }
+    }
+  }
+  
+  &-notification {
+    margin: 0 auto;
+    
+    @include mq(pc) {
+      max-width: $max_width_pc;
+      padding: rem(50) $margin_side_pc;
+    }
+    
+    @include mq(sp) {
+      padding: rem(40) $margin_side_sp;
+    }
+    
+    &-topic {
+      &-en {
+        color: $color_grey;
+      }
+      
+      &-jp {
+        background: linear-gradient(180deg, $color_yellow 0%, $color_red_bright 100%);
+        background: -webkit-linear-gradient(-90deg, $color_yellow 0%, $color_red_bright 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      @include mq(pc) {
+        margin-bottom: rem(30);
+      }
+      
+      @include mq(sp) {
+        margin-bottom: rem(15);
+      }
+    }
+  }
+  
+  &-menu {
+    &-topic {
+      background-image: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(../img/front-menu-bg.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      
+      @include mq(pc) {
+        padding: rem(150) 0;
+      }
+      
+      @include mq(sp) {
+        padding: rem(50) 0;
+      }
+      
+      &-en {
+        color: $color_white;
+        text-shadow: 0 0 2px $color_black;
+      }
+      
+      &-jp {
+        color: $color_white;
+        text-shadow: 0 0 5px $color_black;
+      }
+    }
+  }
+}

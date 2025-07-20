@@ -1,0 +1,31 @@
+.phone {
+  font-size: 0;
+  user-select: none;
+  
+  &-fill {
+    width: 0;
+    height: 0;
+    
+    &-stop1 {
+      stop-color: $color_gradient_stop1;
+    }
+    
+    &-stop2 {
+      stop-color: $color_gradient_stop2;
+    }
+  }
+  
+  &-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &-number {
+    background: -webkit-linear-gradient(-90deg, $color_gradient_stop1 0%, $color_gradient_stop2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: $font_number;
+    font-weight: bold;
+  }
+}

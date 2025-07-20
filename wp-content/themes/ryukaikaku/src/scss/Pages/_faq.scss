@@ -1,0 +1,235 @@
+.faq {
+  &-main {
+    @include mq(pc) {
+      padding-top: $height_header_pc;
+    }
+    
+    @include mq(sp) {
+      padding-top: $height_header_sp;
+    }
+  }
+  
+  &-inner {
+    margin: 0 auto;
+    
+    @include mq(pc) {
+      max-width: $max_width_pc;
+      padding: $margin_side_pc;
+    }
+    
+    @include mq(sp) {
+      padding: $margin_side_sp;
+    }
+  }
+  
+  &-topic {
+    margin: rem(20) auto;
+    text-align: center;
+    font-family: $font_tfgs;
+    font-size: rem(40);
+  }
+  
+  &-navi {
+    border: rem(3) solid $color_red;
+    background: $color_white;
+    user-select: none;
+    
+    @include mq(pc) {
+      width: 80%;
+      max-width: rem(800);
+      border-radius: rem(10);
+      margin: rem(20) auto rem(40);
+      padding: rem(15) 0;
+    }
+    
+    @include mq(sp) {
+      border-radius: rem(8);
+      margin: rem(30) $margin_side_sp rem(30);
+      padding: rem(10) 0;
+    }
+    
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    
+    &-item {
+      text-align: center;
+      font-family: $font_tfgs;
+      letter-spacing: 0.1em;
+      
+      @include mq(pc) {
+        min-width: 33%;
+        font-size: rem(18);
+        padding: rem(3) 0;
+      }
+      
+      @include mq(sp) {
+        min-width: 50%;
+        font-size: rem(14);
+        padding: rem(3) 0;
+      }
+      
+      &:hover a {
+        color: $color_red;
+      }
+    }
+  }
+  
+  &-content {
+    margin: 0 auto;
+    
+    @include mq(pc) {
+      max-width: $max_width_pc;
+      padding: 0 $margin_side_pc rem(40);
+    }
+    
+    @include mq(sp) {
+      padding: 0 $margin_side_sp rem(30);
+    }
+    
+    &-title {
+      background: linear-gradient(to right, $color_red_dark 70%, transparent 90%);
+      color: #FFF;
+      position: relative;
+      font-family: $font_tfgs;
+      border-radius: rem(50);
+      text-shadow: 0 0 rem(2) $color_black;
+      user-select: none;
+      
+      @include mq(pc) {
+        font-size: rem(22);
+        padding: rem(12) 20% rem(12) rem(40);
+        margin-bottom: rem(30);
+      }
+      
+      @include mq(sp) {
+        font-size: rem(18);
+        padding: rem(8) 20% rem(8) rem(35);
+        margin-bottom: rem(25);
+      }
+      
+      &:before {
+        content: " ";
+        position: absolute;
+        width: rem(10);
+        height: rem(10);
+        top: 50%;
+        transform: translateY(-50%);
+        background: $color_white;
+        border-radius: rem(10);
+        box-shadow: 0 0 rem(2) $color_black;
+        
+        @include mq(pc) {
+          left: rem(20);
+        }
+        
+        @include mq(sp) {
+          left: rem(15);
+        }
+      }
+    }
+    
+    &-item {
+      overflow: hidden;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+      border: 2px solid $color_red_light;
+      border-radius: rem(10);
+      
+      @include mq(pc) {
+        margin: rem(15) rem(20);
+      }
+      
+      @include mq(sp) {
+        margin: rem(15) 0;
+      }
+      
+      &-question {
+        color: #FFFFFF;
+        background: $color_red_light;
+        position: relative;
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1.8em;
+        text-shadow: 0 0 rem(2) $color_black;
+        
+        @include mq(pc) {
+          font-size: rem(18);
+          padding: rem(3) rem(50) rem(3) rem(20);
+        }
+        
+        @include mq(sp) {
+          font-size: rem(16);
+          padding: rem(3) rem(40) rem(3) rem(10);
+        }
+        
+        &:before {
+          content: "";
+          position: absolute;
+          background: #FFFFFF;
+          top: 50%;
+          transform: translateY(-50%);
+          
+          @include mq(pc) {
+            width: rem(16);
+            height: rem(3);
+            right: rem(20);
+          }
+          
+          @include mq(sp) {
+            width: rem(12);
+            height: rem(2);
+            right: rem(20);
+          }
+        }
+        
+        &:after {
+          content: "";
+          position: absolute;
+          background: #FFFFFF;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: 0.3s;
+          
+          @include mq(pc) {
+            width: rem(3);
+            height: rem(16);
+            right: rem(26.5);
+          }
+          
+          @include mq(sp) {
+            width: rem(2);
+            height: rem(12);
+            right: rem(24.5);
+          }
+        }
+        
+        &.active:after {
+          transition: 0.3s;
+          
+          @include mq(pc) {
+            height: rem(3);
+          }
+          
+          @include mq(sp) {
+            height: rem(2);
+          }
+        }
+      }
+      
+      &-answer {
+        background: $color_white;
+        line-height: 1.8em;
+        
+        @include mq(pc) {
+          padding: rem(10) rem(30);
+        }
+        
+        @include mq(sp) {
+          padding: rem(10) rem(20);
+        }
+      }
+    }
+  }
+}

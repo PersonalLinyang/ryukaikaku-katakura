@@ -1,0 +1,138 @@
+.footer {
+  background: $color_red;
+  user-select: none;
+  
+  &-inner {
+    margin: 0 auto;
+    
+    @include mq(pc) {
+      max-width: $max_width_pc;
+      padding: 0 $margin_side_pc;
+    }
+    
+    @include mq(sp) {
+      padding: 0 $margin_side_sp;
+    }
+  }
+  
+  &-content {
+    @include mq(pc) {
+      padding: rem(50) 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    @include mq(sp) {
+      padding: rem(40) 0;
+    }
+  }
+  
+  &-info {
+    @include mq(pc) {
+      width: calc(50% - #{rem(30)});
+    }
+    
+    &-address {
+      text-align: center;
+      color: $color_white;
+      text-shadow: 0 0 rem(3) $color_black;
+      margin: rem(25) 0;
+      font-size: rem(20);
+    }
+    
+    &-zipcode {
+      font-size: rem(16);
+      margin-bottom: rem(8);
+    }
+  }
+  
+  &-logo {
+    &-main {
+      width: rem(60);
+      height: rem(60);
+      margin: rem(4);
+    }
+    
+    &-sub {
+      width: rem(30);
+      height: rem(30);
+      margin: rem(4);
+    }
+    
+    &-line {
+      margin: 0 auto;
+    }
+  }
+  
+  &-phone {
+    position: relative;
+    font-size: rem(30);
+    line-height: rem(30);
+    
+    @include mq(pc) {
+      padding: 0 rem(10);
+    }
+    
+    @include mq(sp) {
+      background: $color_red;
+      height: rem(50);
+      width: rem(250);
+      margin: rem(20) auto;
+      border-radius: rem(8);
+      border: 2px solid $color_gradient_stop1;
+    }
+    
+    &-icon {
+      width: rem(30);
+      height: rem(30);
+    }
+    
+    &-number {
+      height: rem(30);
+    }
+  }
+  
+  &-map {
+    color: $color_white;
+    text-align: center;
+    text-shadow: 0 0 rem(2) $color_black;
+    
+    a {
+      color: $color_white;
+    }
+    
+    @include mq(pc) {
+      width: 50%;
+    }
+    
+    @include mq(sp) {
+      margin-top: rem(60);
+    }
+    
+    &-info {
+      @include mq(pc) {
+        margin-top: rem(30);
+      }
+    }
+    
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: rem(15);
+    }
+    
+    &-item {
+      padding: rem(3) 0;
+      font-size: rem(18);
+      width: 50%;
+    }
+    
+    &-title {
+      font-family: $font_tfgs;
+      font-weight: bold;
+      margin-top: rem(25);
+      font-size: rem(25);
+    }
+  }
+}

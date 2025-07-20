@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'TokufutoGyousho';
+  font-display: swap;
+  src: url('../font/TokufutoGyousho.woff2') format('opentype');
+}
+$font_tfgs: "TokufutoGyousho";
+
+@font-face {
+  font-family: 'Oswald Stencil';
+  font-display: swap;
+  src: url('../font/Oswald-Stencil.woff2') format('opentype');
+}
+$font_number: "Oswald Stencil";
+
+$font_en: "Cambria", sans-serif;

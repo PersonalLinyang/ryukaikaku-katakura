@@ -1,0 +1,215 @@
+.menu {
+  margin: 0 auto;
+  
+  @include mq(pc) {
+    max-width: $max_width_pc;
+    padding: rem(50) $margin_side_pc;
+  }
+  
+  @include mq(sp) {
+    padding: rem(40) $margin_side_sp;
+  }
+  
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    @include mq(pc) {
+      max-width: $max_width_pc;
+      padding: rem(20) $margin_side_pc rem(40);
+    }
+    
+    @include mq(sp) {
+      padding: rem(30) $margin_side_sp rem(30);
+    }
+    
+    &-item {
+      position: relative;
+      margin-bottom: rem(20);
+      background: $color_white;
+      border-radius: rem(5);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      
+      @include mq(pc) {
+        width: calc((100% - #{rem(40)}) / 3);
+      }
+      
+      @include mq(sp) {
+        width: calc((100% - #{rem(20)}) / 2);
+      }
+    }
+    
+    &-image {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      
+      @include mq(pc) {
+        height: rem(250);
+      }
+      
+      @include mq(sp) {
+        height: rem(150);
+      }
+      
+      &-inner {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      
+      &-normal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.5s;
+        z-index: 1;
+      }
+      
+      &-comming {
+        background-image: url(../img/front-menu-bg.jpg);
+        filter: blur(3px) contrast(0.25);
+      }
+      
+      &-text {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color_white;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 0 0 rem(4) $color_black;
+        user-select: none;
+        
+        @include mq(pc) {
+          font-size: rem(40);
+          line-height: rem(40);
+        }
+        
+        @include mq(sp) {
+          font-size: rem(26);
+          line-height: rem(26);
+        }
+      }
+      
+      &-english {
+        font-family: $font-en;
+        
+        @include mq(pc) {
+          font-size: rem(20);
+        }
+        
+        @include mq(sp) {
+          font-size: rem(16);
+        }
+      }
+    }
+    
+    @include mq(pc) {
+      &-item:hover &-image-normal {
+        top: 55%;
+        left: 55%;
+        transform: scale(1.1) translate(-50%, -50%);
+      }
+    }
+    
+    &-promotion {
+      position: absolute;
+      color: $color_white;
+      z-index: 2;
+      bottom: 0;
+      font-family: $font_tfgs;
+      text-shadow: 0 0 rem(3) $color_black;
+      box-shadow: 0 0 rem(3) $color_black;
+      border-top: rem(2) solid $color_white;
+      border-right: rem(2) solid $color_white;
+      border-top-right-radius: rem(10);
+      user-select: none;
+      
+      @include mq(pc) {
+        font-size: rem(16);
+        line-height: rem(30);
+        padding: 0 rem(10);
+      }
+      
+      @include mq(sp) {
+        font-size: rem(14);
+        line-height: rem(25);
+        padding: 0 rem(8);
+      }
+      
+      &-new {
+        background: $color_green;
+      }
+      
+      &-recommend {
+        background: $color_orange;
+      }
+      
+      &-limited {
+        background: $color_purple;
+      }
+      
+      &-popular {
+        background: $color_orange;
+      }
+    }
+    
+    &-name {
+      flex-grow: 1;
+      font-weight: bold;
+      padding: rem(20) rem(15) rem(5);
+      
+      @include mq(pc) {
+        font-size: rem(20);
+        
+        a:hover {
+          color: $color_red;
+        }
+      }
+      
+      @include mq(sp) {
+        font-size: rem(16);
+      }
+    }
+    
+    &-price {
+      padding: 0 rem(15) rem(20);
+      text-align: right;
+      user-select: none;
+      
+      @include mq(pc) {
+        font-size: rem(16);
+        line-height: rem(25);
+      }
+      
+      @include mq(sp) {
+        font-size: rem(12);
+        line-height: rem(20);
+      }
+      
+      &-number {
+        color: $color_red_bright;
+        font-weight: bold;
+        text-shadow: 0 0 rem(2) rgba(0, 0, 0, 0.2);
+        padding-right: rem(5);
+        
+        @include mq(pc) {
+          font-size: rem(25);
+        }
+        
+        @include mq(sp) {
+          font-size: rem(20);
+        }
+      }
+    }
+  }
+}

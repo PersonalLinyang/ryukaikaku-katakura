@@ -1,0 +1,109 @@
+.breadcrumb {
+  margin: 0 auto;
+  user-select: none;
+  
+  @include mq(pc) {
+    max-width: $max_width_pc;
+    padding: rem(20) $margin_side_pc;
+  }
+  
+  @include mq(sp) {
+    padding: 0 $margin_side_sp;
+    background: $color_red;
+    overflow: hidden;
+  }
+  
+  &-list {
+    display: flex;
+  }
+  
+  &-item {
+    position: relative;
+    margin-right: rem(25);
+    white-space: nowrap;
+    
+    @include mq(pc) {
+      font-size: rem(15);
+    }
+    
+    @include mq(sp) {
+      font-size: rem(12);
+      line-height: rem(25);
+      color: $color_white;
+    }
+    
+    a {
+      @include mq(pc) {
+        text-decoration: underline;
+        
+        &:hover {
+          color: $color_red;
+        }
+      }
+      
+      @include mq(sp) {
+        color: $color_white;
+      }
+    }
+    
+    &:before {
+      position: absolute;
+      content: " ";
+      width: 0;
+      height: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      @include mq(pc) {
+        border-left: solid rem(5) $color_black;
+        border-top: solid rem(5) transparent;
+        border-bottom: solid rem(5) transparent;
+        right: rem(-16);
+      }
+      
+      @include mq(sp) {
+        border-left: solid rem(15) $color_body_background;
+        border-top: solid rem(15) transparent;
+        border-bottom: solid rem(15) transparent;
+        right: rem(-18);
+      }
+    }
+    
+    &:after {
+      position: absolute;
+      content: " ";
+      width: 0;
+      height: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      @include mq(pc) {
+        border-left: solid rem(5) $color_body_background;
+        border-top: solid rem(5) transparent;
+        border-bottom: solid rem(5) transparent;
+        right: rem(-14);
+      }
+      
+      @include mq(sp) {
+        border-left: solid rem(14) $color_red;
+        border-top: solid rem(14) transparent;
+        border-bottom: solid rem(14) transparent;
+        right: rem(-16);
+      }
+    }
+    
+    &:last-child {
+      margin-right: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+      &:before {
+        display: none;
+      }
+      
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

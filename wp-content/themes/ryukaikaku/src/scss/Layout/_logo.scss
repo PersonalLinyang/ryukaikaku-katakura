@@ -1,0 +1,32 @@
+.logo {
+  font-size: 0;
+  
+  &-fill {
+    width: 0;
+    height: 0;
+    
+    &-stop1 {
+      stop-color: $color_gradient_stop1;
+    }
+    
+    &-stop2 {
+      stop-color: $color_gradient_stop2;
+    }
+  }
+  
+  &-line {
+    width: fit-content;
+    
+    @include mq(pc) {
+      margin: rem(5) auto;
+    }
+    
+    @include mq(sp) {
+      margin: rem(5) rem(6) rem(5) 0;
+    }
+  }
+  
+  path {
+    stroke: transparent;
+  }
+}

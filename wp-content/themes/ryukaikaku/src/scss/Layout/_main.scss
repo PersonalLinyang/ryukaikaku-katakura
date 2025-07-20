@@ -1,0 +1,9 @@
+.main {
+  @include mq(pc) {
+    padding-top: $height_header_pc;
+  }
+
+  @include mq(sp) {
+    padding-top: $height_header_sp;
+  }
+}

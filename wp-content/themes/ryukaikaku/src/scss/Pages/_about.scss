@@ -1,0 +1,112 @@
+.about {
+  &-access {
+    &-content {
+      margin: 0 auto;
+      
+      @include mq(pc) {
+        max-width: $max_width_pc;
+        padding: rem(30) $margin_side_pc rem(50);
+        position: relative;
+      }
+      
+      @include mq(sp) {
+        padding: rem(20) $margin_side_sp rem(30);
+      }
+    }
+    
+    &-map {
+      @include mq(pc) {
+        position: relative;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        overflow: hidden;
+        border-radius: 5px;
+        font-size: 0;
+      }
+      
+      &-iframe {
+        width: 100%;
+        border: 0;
+        
+        @include mq(pc) {
+          height: rem(600);
+        }
+        
+        @include mq(sp) {
+          height: rem(400);
+          box-shadow: 0 0 5px rgba(0,0,0,0.5);
+          overflow: hidden;
+          border-radius: 5px;
+          font-size: 0;
+        }
+      }
+    }
+    
+    &-info {
+      @include mq(pc) {
+        position: absolute;
+        width: calc(100% - 330px);
+        max-width: 270px;
+        font-size: 12px;
+        top: 10px;
+        right: 10px;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+        z-index: 1;
+        background: $color_red;
+        color: $color_white;
+        text-shadow:  0 0 rem(2) $color_black;
+      }
+      
+      @include mq(sp) {
+        max-width: rem(500);
+        margin: rem(20) auto 0;
+      }
+      
+      &-line {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      &-name {
+        @include mq(pc) {
+          width: 60px;
+          text-align: right;
+          margin: 9px 0;
+        }
+        
+        @include mq(sp) {
+          width: rem(80);
+          margin: rem(5) 0;
+          padding: rem(8) rem(10);
+          background: $color_red;
+          box-shadow: 0 0 3px rgba(0,0,0,0.5);
+          color: $color_white;
+        }
+      }
+      
+      &-value {
+        @include mq(pc) {
+          width: calc(100% - 75px);
+        }
+        
+        @include mq(sp) {
+          width: calc(100% - #{rem(90)});
+          margin: rem(5) 0;
+          padding: rem(3) rem(10);
+          background: $color_grey_light;
+          box-shadow: 0 0 3px rgba(0,0,0,0.5);
+        }
+      }
+      
+      &-detail {
+        @include mq(pc) {
+          margin: 9px 0;
+        }
+        
+        @include mq(sp) {
+          margin: rem(5) 0;
+        }
+      }
+    }
+  }
+}
